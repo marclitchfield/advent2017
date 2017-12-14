@@ -1,9 +1,3 @@
-const distance = (start, end) => {
-  const startMem = memory(start);
-  const endMem = memory(end);
-  return Math.abs(endMem.y - startMem.y) + Math.abs(endMem.x - startMem.x);
-}
-
 const memory = (num) => {
   const moves = [[1,0], [0,-1], [-1,0], [0,1]];
   return [...Array(num).keys()].reduce((state) => {
@@ -40,8 +34,4 @@ const neighbors = (mem, x, y) => {
   ];
 }
 
-// const d = distance(1, 347991)
-// d
-
-const result = memory(347991).value;
-console.log('result is', result);
+console.log('result is', memory(347991).value);
